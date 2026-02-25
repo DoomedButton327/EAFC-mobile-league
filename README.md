@@ -46,8 +46,7 @@ Full Name, InGameUsername, PhoneNumber
 
 Example:
 ```
-Thandobhaze0023, bhaze, 0679687240
-Sailor, Sailor, 0677514331
+astral_reign, astral, 0123456789
 ```
 
 ## ⚙️ Admin Controls
@@ -88,3 +87,23 @@ MIT — free to use and modify for community leagues.
 ---
 
 *Built for the Mettlestate community. #MettlestateLeague*
+
+## 🔄 GitHub Sync
+
+The league can auto-save all data and match screenshots directly to your repo via the GitHub API.
+
+### Setup
+1. Go to **Admin → GitHub Sync**
+2. Enter your GitHub username, repo name, and branch
+3. Create a [Personal Access Token](https://github.com/settings/tokens) with `repo` scope
+4. Paste it in and click **Save & Connect**
+
+Once connected:
+- Every result, player change, or fixture update is committed automatically to `data/league-data.json`
+- Match screenshots are uploaded to `match-images/` in your repo
+- On next page load, the app reloads data from GitHub so it's always in sync
+
+### Token Security
+Your token is stored in your browser's `localStorage` only — it is never sent anywhere except directly to `api.github.com`. For a public repo with one admin, this is the standard approach.
+
+> ⚠️ Don't share your screen while the Admin panel is open, as the token is visible in the form.

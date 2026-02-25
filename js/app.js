@@ -457,11 +457,7 @@ function generateDraw() {
             [newFixtures[i], newFixtures[j]] = [newFixtures[j], newFixtures[i]];
         }
     } else {
-        const shuffled = [...players];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
+        const shuffled = [...players].sort(()=>0.5-Math.random());
         for (let i=0; i<shuffled.length-1; i+=2)
             newFixtures.push({ home:shuffled[i].username, away:shuffled[i+1].username, id:Date.now()+i });
     }
